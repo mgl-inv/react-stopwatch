@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
@@ -22,9 +22,11 @@ function App() {
     return (
         <div className='App'>
             <div className='timer__board'>
-                <span className='timer__msec'>{('0' + Math.floor((time / 60000) % 60)).slice(-2)}</span>
-                <span className='timer__min'>{('0' + Math.floor((time / 1000) % 60)).slice(-2)}</span>
-                <span className='timer__sec'>{('0' + ((time / 10) % 100)).slice(-2)}</span>
+                <span>{('0' + Math.floor((time / 60000) % 60)).slice(-2)}</span>
+                <span>:</span>
+                <span>{('0' + Math.floor((time / 1000) % 60)).slice(-2)}</span>
+                <span>:</span>
+                <span>{('0' + ((time / 10) % 100)).slice(-2)}</span>
             </div>
             <div>
                 {!timerOn && time === 0 && (
